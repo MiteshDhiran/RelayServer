@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RelayServer", "RelayServer\RelayServer.fsproj", "{ECF98808-DA67-4D5B-BAD9-FD8E06EE4047}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECF98808-DA67-4D5B-BAD9-FD8E06EE4047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF98808-DA67-4D5B-BAD9-FD8E06EE4047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF98808-DA67-4D5B-BAD9-FD8E06EE4047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF98808-DA67-4D5B-BAD9-FD8E06EE4047}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
