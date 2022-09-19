@@ -1,6 +1,5 @@
 ﻿open System
 open System.Net
-
 type Sockets.Socket with
     member this.AsyncConnect endPoint =
         let callback (endPoint, callback, state) =
@@ -31,6 +30,7 @@ let connectTo (inbox: MailboxProcessor<_>) endPoint = async {
     let socketType = Sockets.SocketType.Stream
     let protocolType = Sockets.ProtocolType.Tcp
     let socket = new Sockets.Socket(addressFamily, socketType, protocolType)
+    System.Threading.Thread.Sleep(2000)
     do! socket.AsyncConnect endPoint
     inbox.Post(ConnectionEstablished socket)
 }
@@ -117,14 +117,12 @@ do
     let! length = socket.AsyncReceive(buffer, 0, 1, Sockets.SocketFlags.None)
     printf "%c" (char buffer.[0])
     } |> Async.Start
-    // agent.Post(ConnectTo address)
+    agent.Post(ConnectTo address)
     // while true do
     for letter in 'A'..'Z' do
-        Console.Write($"[{letter}]")
         agent.Post(Echo [|byte letter|])
-    agent.Post(ConnectTo address)
     
 
 // For more information see https://aka.ms/fsharp-console-apps
-printfn "Hello from F#"
+printfn "Press Enter to exit"
 stdin.ReadLine() |> ignore
